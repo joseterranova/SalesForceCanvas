@@ -25,7 +25,7 @@
     <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css" />
 
     <!-- Include all the canvas JS dependencies in one file -->
-    <script type="text/javascript" src="https://quiburnd-dev-ed.lightning.force.com/canvas/sdk/js/40.0/canvas-all.js"></script>
+    <script type="text/javascript" src="/sdk/js/canvas-all.js"></script>
     <!-- Third part libraries, substitute with your own -->
     <script type="text/javascript" src="/scripts/json2.js"></script>
 
@@ -34,14 +34,12 @@
             // Not in Iframe
             alert("This canvas app must be included within an iframe");
         }
-
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
             // Save the token
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
         });
-
     </script>
 </head>
 <body>
